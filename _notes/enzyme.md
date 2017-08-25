@@ -1,5 +1,6 @@
 ## Enzyme
-  By Airbnb, 
+  By Airbnb
+
 ## Create component
   
   - mount  Full DOM rendering, it allows you to render a part of the DOM tree and it also gives you access to the lifecycle methods of React components 
@@ -21,8 +22,12 @@
   ```
 
 ## Enzyme selector
-  Similar with jQuery selector. No need to TestUtils.findRenderedDOMComponentWithXXX
-  
+  Similar with jQuery selector. No need to use
+  ```
+    const TestUtils = require('react-addons-test-utils')
+    TestUtils.findRenderedDOMComponentWithXXX
+  ```
+
   ```
   componentToTest.find('div'); // On HTML tags
   componentToTest.find('.pretty > .red-row'); // On CSS selectors
@@ -30,3 +35,5 @@
   componentToTest.find('label[visible=true]'); // On properties
 
   ```
+
+  
