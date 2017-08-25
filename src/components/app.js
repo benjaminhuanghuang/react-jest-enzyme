@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
-import CommentBox from './comment_box';
-import CommentList from './comment_list';
+import CommentBox from './CommentBox';
+import CommentList from './CommentList';
 
 export default class App extends Component {
   render() {
