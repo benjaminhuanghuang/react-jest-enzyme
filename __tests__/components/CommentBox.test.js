@@ -27,12 +27,16 @@ describe('CommentBox', () => {
     expect(component.hasClass('comment-box')).toEqual(true);
   });
 
+  it('do not has a h2', () => {
+    expect(component.find('h2')).toHaveLength(0);
+  });
+
   it('has a text area', () => {
-    expect(component.find('textarea')).toBeDefined();
+    expect(component.find('textarea')).toHaveLength(1);
   });
 
   it('has a button', () => {
-    expect(component.find('button')).toBeDefined();
+    expect(component.find('button')).toHaveLength(1);
   });
 
   // describe('simulate entering some text', () => {

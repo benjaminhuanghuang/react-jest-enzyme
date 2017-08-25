@@ -1,8 +1,9 @@
 ## Command
   jest --watch --coverage
 
-## Support ES6
-  npm i -D babel-jest babel-loader babel-preset-es2015 babel-preset-react
+## Dependency
+  - Support ES6
+    npm i -D babel-jest babel-loader babel-preset-es2015 babel-preset-react
   
   add config to package.json
   ```

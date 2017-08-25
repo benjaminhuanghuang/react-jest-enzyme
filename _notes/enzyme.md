@@ -1,6 +1,11 @@
 ## Enzyme
   By Airbnb
 
+## Dependency
+  npm i -D react-test-renderer
+
+  react-dom@15.5+ and react-test-renderer are implicit dependencies when using react@15.5+ with enzyme. 
+
 ## Create component
   
   - mount  Full DOM rendering, it allows you to render a part of the DOM tree and it also gives you access to the lifecycle methods of React components 
