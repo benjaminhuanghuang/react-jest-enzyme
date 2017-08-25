@@ -1,9 +1,15 @@
+// React + Redux
 import React from "react";
 import ReactDOM from "react-dom";
-// Shallow renders the current node and returns a shallow wrapper around it
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+// Test library
 import { shallow, mount, render } from "enzyme";
 import mockStore from 'redux-mock-store';
 
+// App
+import reducers from '../../src/reducers';
 import CommentBox from '../../src/components/CommentBox';
 
 
@@ -11,22 +17,25 @@ describe('CommentBox', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<CommentBox/>);
+    component = shallow( 
+      <Provider store={createStore(reducers)}>
+        <CommentBox/>
+      </Provider>);
   });
 
-  it('has the correct class', () => {
-    expect(component).hasClass('comment-box').to.equal(true);
+  fit('has the correct class', () => {
+    expect(component.find('form').hasClass('comment-box')).toEqual(true);
   });
 
-  // it('has a text area', () => {
-  //   expect(component.find('textarea')).to.exist();
-  // });
+  it('has a text area', () => {
+    expect(component.find('textarea')).toBeDefined();
+  });
 
-  // it('has a button', () => {
-  //   expect(component.find('button')).to.exist;
-  // });
+  it('has a button', () => {
+    expect(component.find('button')).toBeDefined();
+  });
 
-  // describe('entering some text', () => {
+  // describe('simulate entering some text', () => {
   //   beforeEach(() => {
   //     component.find('textarea').simulate('change', 'new comment');
   //   });

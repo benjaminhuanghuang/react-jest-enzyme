@@ -7,7 +7,7 @@ import { shallow, mount } from "enzyme";
 import App from "../../src/components/App";
 
 // Group the test
-describe("App", () => {
+describe.skip("App", () => {
   let component;
 
   beforeEach(() => {
