@@ -17,14 +17,14 @@ describe('CommentBox', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow( 
+    component = mount( 
       <Provider store={createStore(reducers)}>
         <CommentBox/>
       </Provider>);
   });
 
-  fit('has the correct class', () => {
-    expect(component.find('form').hasClass('comment-box')).toEqual(true);
+  it('has the correct class', () => {
+    expect(component.hasClass('comment-box')).toEqual(true);
   });
 
   it('has a text area', () => {
