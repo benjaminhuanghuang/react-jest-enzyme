@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 // Shallow renders the current node and returns a shallow wrapper around it
 import { shallow, mount } from "enzyme";
 
-import App from "../../src/components/app";
+import App from "../../src/components/App";
 
 // Group the test
 describe("App", () => {

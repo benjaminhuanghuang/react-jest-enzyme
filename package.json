@@ -6,13 +6,16 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test-old": "mocha --compilers js:babel-core/register  --recursive ./test",
-    "test":"jest",
+    "test": "jest",
     "test:watch": "npm run test -- --watch"
   },
   "author": "",
   "license": "ISC",
   "babel": {
-    "presets":["es2015","react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "dependencies": {
     "lodash": "^4.17.4",
@@ -30,6 +33,7 @@
     "webpack": "^3.5.5",
     "enzyme": "^2.9.1",
     "jest": "~20.0.4",
+    "redux-mock-store": "^1.2.3",
     "react-test-renderer": "^15.6.1",
     "webpack-dev-server": "^2.7.1"
   }
