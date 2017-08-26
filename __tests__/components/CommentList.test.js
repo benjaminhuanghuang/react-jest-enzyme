@@ -24,8 +24,9 @@ describe('CommentList', () => {
     expect(component.find('li').length).toEqual(2);
   });
 
-  it.skip('shows each comment that is provided', () => {
-    expect(component.text()).toContainEqual('New Comment');
-    expect(component.text()).toContainEqual('Other New Comment');
+  it('shows each comment that is provided', () => {
+    console.log(component.text());
+    expect(component.text()).toContain('New Comment');
+    expect(component.text()).toContain('Other New Comment');
   });
 });
