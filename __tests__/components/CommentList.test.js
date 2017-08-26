@@ -25,7 +25,7 @@ describe('CommentList', () => {
   });
 
   it('shows each comment that is provided', () => {
-    console.log(component.text());
+    // console.log(component.text());
     expect(component.text()).toContain('New Comment');
     expect(component.text()).toContain('Other New Comment');
   });
