@@ -41,6 +41,8 @@
   ```
   component.find('textarea').simulate('change', {target: {value: 'new comment'}});  
   ```
+## Form
+  component.simulate('submit');
 
 ## Snapshot
   expect(component).toMatchSnapshot()

@@ -23,7 +23,12 @@
   let todoLength = app.find('li').length;
   app.find('button.delete').at(0).simulate('click');
   expect(app.find('li').length).to.equal(todoLength - 1);
+  ```
 
+  - Pass props to component
+  ```
+  const props = { comments: ['New Comment', 'Other New Comment'] };
+  component = mount(<CommentList/>, { context: {store: createStore(reducers, props)}});
   ```
 
 ## Enzyme selector

@@ -40,4 +40,8 @@ describe("App", () => {
   it('show a comment box has class comment-box', () => {
     expect(component.find('.comment-box').length).toEqual(1);
   });
+
+  it('show a comment list has class comment-box', () => {
+    expect(component.find('.comment-list').length).toEqual(1);
+  });
 });
