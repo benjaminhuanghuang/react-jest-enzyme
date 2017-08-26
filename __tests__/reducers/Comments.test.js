@@ -3,7 +3,8 @@ import { SAVE_COMMENT } from '../../src/actions/types';
 
 describe('Comments Reducer', () => {
   it('handles action with unknown type', () => {
-    expect(commentReducer(undefined, {})).toEqual([]);
+    expect(commentReducer(undefined, {})).toEqual(expect.arrayContaining([]));
+    expect(commentReducer(undefined, {})).toEqual([ ]);
   });
 
   it('handles action of type SAVE_COMMENT', () => {
