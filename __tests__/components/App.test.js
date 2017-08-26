@@ -1,7 +1,13 @@
+// React + Redux
 import React from "react";
 import ReactDOM from "react-dom";
-import { shallow, mount, render } from "enzyme";
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
+// Test
+import { shallow, mount, render } from "enzyme";
+// App
+import reducers from '../../src/reducers';
 import App from "../../src/components/App";
 
 // Group the test
@@ -9,11 +15,16 @@ describe("App", () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<App name="app"/>);
+    component = mount(
+      <Provider store={createStore(reducers)}>
+        <App name="app" store={createStore(reducers)}/>
+      </Provider>
+    );
   });
 
   it("it renders props correctly", () => {
-    expect(component.instance().props.name).toBe('app');
+    // console.log(component.props());
+    expect(component.props().children.props.name).toBe('app');
   });
 
   // Test one attribute
@@ -24,5 +35,9 @@ describe("App", () => {
   it("renders 1 App component using shallow", () => {
     const component = shallow(<App name="myApp" />);
     expect(component).toHaveLength(1);
+  });
+
+  it('show a comment box has class comment-box', () => {
+    expect(component.find('.comment-box').length).toEqual(1);
   });
 });

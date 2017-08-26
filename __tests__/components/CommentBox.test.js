@@ -39,18 +39,18 @@ describe('CommentBox', () => {
     expect(component.find('button')).toHaveLength(1);
   });
 
-  // describe('simulate entering some text', () => {
-  //   beforeEach(() => {
-  //     component.find('textarea').simulate('change', 'new comment');
-  //   });
+  describe('simulate entering some text', () => {
+    beforeEach(() => {
+      component.find('textarea').simulate('change', {target: {value: 'new comment'}});
+    });
 
-  //   it('shows that text in the textarea', () => {
-  //     expect(component.find('textarea')).to.have.value('new comment');
-  //   });
+    it('shows that text in the textarea', () => {
+      expect(component.find('textarea').text()).toBe('new comment');
+    });
 
-  //   it('when submitted, clears the input', () => {
-  //     component.simulate('submit');
-  //     expect(component.find('textarea')).to.have.value('');
-  //   });
-  // });
+    it('when submitted, clears the input', () => {
+      component.simulate('submit');
+      expect(component.find('textarea').text()).toBe('');
+    });
+  });
 });

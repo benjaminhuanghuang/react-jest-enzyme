@@ -19,10 +19,15 @@
     - fit
 
 ## Test sub element
-
-## Test class 
-
+  ```
+  expect(component.find('textarea')).toHaveLength(1);
+  ```
+## Test class name
+  ```
+  expect(component.hasClass('comment-box')).toEqual(true);
+  ```
 ## Simulate
+  - Button
   ```
   const component = mount(<App/>);
   const button = component.find('button');
@@ -31,6 +36,10 @@
   button.simulate('click');
 
   expect(component.state().counter).toEqual(4)
+  ```
+  - Text
+  ```
+  component.find('textarea').simulate('change', {target: {value: 'new comment'}});  
   ```
 
 ## Snapshot
