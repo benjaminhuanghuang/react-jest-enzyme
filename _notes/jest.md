@@ -1,3 +1,12 @@
+## Introduction
+Jest is a framework and not a library. It comes with a test runner, assertion library, and good mocking support. Jest is built on top of Jasmine.
+
+- Snapshot testing. With snapshot testing, the output of the current test run is compared with the snapshot of the previous test run. If the output matches the snapshot, the test passes.
+
+- Jest requires the react-test-renderer package to render the component to JSON
+
+- The expect function is part of the assertion library exposed by Jest.
+
 ## Command
   jest --watch --coverage
 
@@ -45,7 +54,17 @@
   component.simulate('submit');
 
 ## Snapshot
-  expect(component).toMatchSnapshot()
+```
+  import renderer from 'react-test-renderer';
+
+  describe('Welcome (Snapshot)', () => {
+    it('Welcome renders hello world', () => {
+      const component = renderer.create(<Welcome />);
+      const json = component.toJSON();
+      expect(json).toMatchSnapshot();  //expect() is part of the assertion library exposed by Jest
+    });
+  });
+```
 
 ## Mock
   From Jest v15, automokcing was closed by default
